@@ -40,7 +40,7 @@ namespace WebsiteBanHangOMon.Controllers
         {
             // Danh sach sản phẩm 
             var products = _productRepository.GetAll();
-            return View(products);
+            return View(products); // truyền dữ liệu qua view 
         }
     }
 }
