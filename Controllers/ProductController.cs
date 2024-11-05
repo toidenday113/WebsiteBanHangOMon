@@ -38,6 +38,7 @@ namespace WebsiteBanHangOMon.Controllers
 
         public IActionResult Index()
         {
+            // Danh sach sản phẩm 
             var products = _productRepository.GetAll();
             return View(products);
         }
