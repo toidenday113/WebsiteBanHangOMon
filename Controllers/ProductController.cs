@@ -35,6 +35,25 @@ namespace WebsiteBanHangOMon.Controllers
             return View(product);
         }
 
+        public IActionResult Update(int id)
+        {
+            var product = _productRepository.GetById(id);
+            var categories = _categoryRepository.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Product product)
+        {
+            //if (ModelState.IsValid)
+            //{
+                _productRepository.Update(product);
+                return RedirectToAction("Index");
+           // }
+            //return View(product);
+        }
+
 
         public IActionResult Index()
         {
